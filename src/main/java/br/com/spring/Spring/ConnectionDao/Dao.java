@@ -64,5 +64,17 @@ public class Dao {
             throw new RuntimeException(e);
         }
     }
+    public void update(String user, String newUser){
+        connection = new ConnectionFactory().getConnection();
+        String sql = "update users set user= " + newUser + " where user = " + user;
+        try{
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.execute();
+            connection.close();
+            stmt.close();
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+    }
 
 }

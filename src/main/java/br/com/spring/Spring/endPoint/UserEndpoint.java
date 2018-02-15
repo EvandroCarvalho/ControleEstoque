@@ -46,5 +46,16 @@ public class UserEndpoint {
         new Dao().insertUser(user);
         return  new ResponseEntity(user, HttpStatus.OK);
     }
+    @RequestMapping(method = RequestMethod.DELETE)
+    public ResponseEntity deleteAll(){
+        new Dao().delete();
+        return new ResponseEntity("Todos os dados da tabela User foram excluidos",HttpStatus.OK);
+    }
+    //ajustar este método e o Dao
+    @RequestMapping(method = RequestMethod.PUT)
+    public ResponseEntity update(@RequestBody Users user){
+        new Dao().update(user.getUser(), user.getUser());
+        return new ResponseEntity(user, HttpStatus.OK);
+    }
 }
 

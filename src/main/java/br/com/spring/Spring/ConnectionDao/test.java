@@ -8,7 +8,7 @@ import java.util.List;
 public class test {
     public static void main(String[] args) {
         Dao dao = new Dao();
-        dao.delet();
+        dao.delete();
         Users Uuser = new Users(0,"Evandro","123");
         dao.insertUser(Uuser);
 
